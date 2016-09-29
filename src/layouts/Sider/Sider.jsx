@@ -11,7 +11,8 @@ const Sider = React.createClass({
     };
   },
   handleClick(e) {
-    console.log('click ', e);
+    // console.log('click ', e);
+    window.location.hash = e.key;
     this.setState({
       current: e.key,
       openKeys: e.keyPath.slice(1),
@@ -33,13 +34,13 @@ const Sider = React.createClass({
         mode="inline"
       >
         <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Filters:</span></span>}>
-          <Menu.Item key="1"><Link to="/">All</Link></Menu.Item>
-          <Menu.Item key="2"><Link to="/actived">Actived</Link></Menu.Item>
-          <Menu.Item key="3"><Link to="/completed">Completed</Link></Menu.Item>
+          <Menu.Item key="/">All</Menu.Item>
+          <Menu.Item key="/actived">Actived</Menu.Item>
+          <Menu.Item key="/completed">Completed</Menu.Item>
           <Menu.Item key="4">选项4</Menu.Item>
         </SubMenu>
         <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>test</span></span>}>
-          <Menu.Item key="5"><Link to="/test">test</Link></Menu.Item>
+          <Menu.Item key="/test">test</Menu.Item>
           <Menu.Item key="6">选项6</Menu.Item>
           <SubMenu key="sub3" title="三级导航">
             <Menu.Item key="7">选项7</Menu.Item>
